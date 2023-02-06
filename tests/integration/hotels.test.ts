@@ -1,5 +1,4 @@
 import app, { init } from "@/app";
-import { prisma } from "@/config";
 import faker from "@faker-js/faker";
 import { TicketStatus } from "@prisma/client";
 import httpStatus from "http-status";
@@ -10,15 +9,11 @@ import {
   createUser,
   createTicketType,
   createTicket,
-  createhAddressWithCEP,
   createTicketTypeWithRemoteTrue,
   createTicketTypeWithIncludesHotelFalse,
   createTicketTypeTestHotel,
 } from "../factories";
 import { cleanDb, generateValidToken } from "../helpers";
-
-import { generateCPF, getStates } from "@brazilian-utils/brazilian-utils";
-import dayjs from "dayjs";
 import { createHotel } from "../factories/hotels-factory";
 
 beforeAll(async () => {
